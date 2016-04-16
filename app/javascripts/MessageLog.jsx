@@ -116,6 +116,7 @@ var MessageLog = React.createClass({
         hash: msg.blockHash,
         number: msg.blockNumber
       },
+      date: msg.args.date.toNumber(),
       sender: msg.args.sender,
       recipient: msg.args.recipient,
       message: msg.args.message

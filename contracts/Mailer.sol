@@ -1,6 +1,6 @@
 contract Mailer {
   address owner;
-  event Message(address sender, address recipient, bytes message);
+  event Message(address sender, address recipient, bytes message, uint date);
 
   function Mailer() {
     owner = msg.sender;
@@ -25,7 +25,7 @@ contract Mailer {
         throw; // Didn't send enough to transmit
       }
     }
-    Message(msg.sender, recipient, message);
+    Message(msg.sender, recipient, message, block.timestamp);
   }
 
 }
