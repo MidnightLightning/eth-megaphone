@@ -33,13 +33,6 @@ function setStatus(message) {
   status.innerHTML = message;
 };
 
-function addToLog(message) {
-  var log = document.getElementById("log");
-  var logEntry = document.createElement("div");
-  logEntry.innerHTML = `From: ${message.sender}, To: ${message.recipient}, Message: ${message.messageAscii}`;
-  //log.appendChild(logEntry);
-}
-
 function asciiValue(str) {
   if (str.substr(0, 2) == '0x') return str;
   // Check and see if it only has numeric digits

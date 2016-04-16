@@ -1,8 +1,14 @@
 var ValueViewer = React.createClass({
   getInitialState: function() {
     return {
-      mode: 'hex'
+      mode: 'hex',
+      ascii: hex2a(this.props.value)
     };
+  },
+  componentWillReceiveProps: function(props) {
+    this.setState({
+      ascii: hex2a(props.value)
+    });
   },
   toggleState: function() {
     this.setState(function(state) {
@@ -35,7 +41,7 @@ var ValueViewer = React.createClass({
     } else {
       // Ascii representation
       return (
-        <span title={value} onClick={this.toggleState}>{hex2a(value)}</span>
+        <span title={value} onClick={this.toggleState}>{this.state.ascii}</span>
       );
     }
   }
@@ -44,8 +50,14 @@ var ValueViewer = React.createClass({
 var MessageViewer = React.createClass({
   getInitialState: function() {
     return {
-      mode: 'ascii'
+      mode: 'ascii',
+      ascii: hex2a(this.props.value)
     };
+  },
+  componentWillReceiveProps: function(props) {
+    this.setState({
+      ascii: hex2a(props.value)
+    });
   },
   toggleState: function(e) {
     this.setState(function(state) {
@@ -64,7 +76,7 @@ var MessageViewer = React.createClass({
       );
     }
     return (
-      <div title={this.props.message} className="message" onClick={this.toggleState}>{hex2a(this.props.value)}</div>
+      <div title={this.props.message} className="message" onClick={this.toggleState}>{this.state.ascii}</div>
     );
   }
 });
