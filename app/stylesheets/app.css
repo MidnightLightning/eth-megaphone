@@ -38,10 +38,7 @@ h3 {
   font-size: 24px;
 }
 
-.black {
-  color: black;
-}
-
-#balance {
-  color: black;
-}
+.log-entry { border: solid 1px #CCC; padding: 1em; margin:0.2em; }
+.log-entry .field-label { font-weight: bold; }
+.log-entry .hex { font-family: monospace; }
+.log-entry .message { margin-top:1em; }

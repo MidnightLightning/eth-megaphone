@@ -2,6 +2,7 @@ module.exports = {
   build: {
     "index.html": "index.html",
     "app.js": [
+      "javascripts/MessageLog.jsx",
       "javascripts/app.js"
     ],
     "app.css": [
